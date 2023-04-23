@@ -43,3 +43,13 @@ for i in award_list_sorted:
     file_award = open(folder_award_name, 'w')
     file_award_name = open(folder_award_name, 'a')
     file_award_name.write(f'{j["award"]}') #У файл з ім'ям кожної нагороди перенеси всі назви номінацій цієї(award) нагороди.
+
+
+
+if not os.path.exists('film_player/film_storage'): #homework15 В середині пакету film_player створіть дерикторію film_storage. А в середині film_storage дерикторії від A до Z
+    os.makedirs('film_player/film_storage')
+
+for letter in range(ord('A'), ord('Z')+1):
+    letter_dir = f'film_player/film_storage/{chr(letter)}'
+    if not os.path.exists(letter_dir):
+        os.makedirs(letter_dir)
